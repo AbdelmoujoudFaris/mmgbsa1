@@ -1,0 +1,199 @@
+[INFO   ] Starting gmx_MMPBSA v1.6.0
+[DEBUG  ] WDIR          : /home/a.alix/Redynamicarti2/5/gromacs/gx
+[DEBUG  ] AMBERHOME     : /home/a.alix/.conda/envs/gmxMMPBSA
+[DEBUG  ] PYTHON EXE    : /data/shared/apps2/EasyBuild/software/Python/3.9.5-GCCcore-10.3.0/bin/python
+[DEBUG  ] PYTHON VERSION: 3.9.15 | packaged by conda-forge | (main, Nov 22 2022, 08:45:29) [GCC 10.4.0]
+[DEBUG  ] MPI           : /cm/shared/apps/eb/software/OpenMPI/4.1.1-GCC-10.3.0/bin/mpirun
+[DEBUG  ] ParmEd        : 3.4.4
+[DEBUG  ] OS PLATFORM   : Linux-4.18.0-348.12.2.el8_5.x86_64-x86_64-with-glibc2.28
+[DEBUG  ] OS SYSTEM     : Linux
+[DEBUG  ] OS VERSION    : #1 SMP Mon Jan 17 07:06:06 EST 2022
+[DEBUG  ] OS PROCESSOR  : x86_64
+
+[INFO   ] Command-line
+  gmx_MMPBSA -O -i mmpbsa.in -cs com.pdb -ci index_mod_gromacs.ndx -cg 1 14 -ct com_traj.xtc -cp topol.top -o FINAL_RESULTS_MMPBSA.dat -eo FINAL_RESULTS_MMPBSA.csv
+
+[DEBUG  ] |Input file:
+[DEBUG  ] |--------------------------------------------------------------
+[DEBUG  ] |Sample input file for GB calculation
+[DEBUG  ] |#This input file is meant to show only that gmx_MMPBSA works. Although, we tried to use the input files as recommended in the
+[DEBUG  ] |#Amber manual, some parameters have been changed to perform more expensive calculations in a reasonable amount of time. Feel free to change the parameters
+[DEBUG  ] |#according to what is better for your system.
+[DEBUG  ] |
+[DEBUG  ] |&general
+[DEBUG  ] |sys_name="Prot-Lig-ST",
+[DEBUG  ] |startframe=1,
+[DEBUG  ] |endframe=10,
+[DEBUG  ] |/
+[DEBUG  ] |&gb
+[DEBUG  ] |igb=5, saltcon=0.150,
+[DEBUG  ] |/
+[DEBUG  ] |--------------------------------------------------------------
+[DEBUG  ] 
+[INFO   ] Checking mmpbsa.in input file...
+[INFO   ] Checking mmpbsa.in input file...Done.
+
+[INFO   ] Checking external programs...
+[INFO   ] cpptraj found! Using /home/a.alix/.conda/envs/gmxMMPBSA/bin/cpptraj
+[INFO   ] tleap found! Using /home/a.alix/.conda/envs/gmxMMPBSA/bin/tleap
+[INFO   ] parmchk2 found! Using /home/a.alix/.conda/envs/gmxMMPBSA/bin/parmchk2
+[INFO   ] sander found! Using /home/a.alix/.conda/envs/gmxMMPBSA/bin/sander
+[INFO   ] Using GROMACS version > 5.x.x!
+[INFO   ] gmx found! Using /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a/bin/gmx
+[INFO   ] Checking external programs...Done.
+
+[INFO   ] Building AMBER topologies from GROMACS files...
+[INFO   ] Get PDB files from GROMACS structures files...
+[INFO   ] Making gmx_MMPBSA index for complex...
+[DEBUG  ] Running command: echo -e "name 1 GMXMMPBSA_REC\n name 14 GMXMMPBSA_LIG\n  1 | 14\n q\n" | /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a/bin/gmx make_ndx -n index_mod_gromacs.ndx -o _GMXMMPBSA_COM_index.ndx -f com.pdb
+[DEBUG  ]              :-) GROMACS - gmx make_ndx, 2021.3-EasyBuild-4.5.2 (-:
+[DEBUG  ] 
+[DEBUG  ]                             GROMACS is written by:
+[DEBUG  ]      Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+[DEBUG  ]          Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+[DEBUG  ]        Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+[DEBUG  ]      Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+[DEBUG  ]     Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+[DEBUG  ]        Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+[DEBUG  ]       Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+[DEBUG  ]     Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+[DEBUG  ]       Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+[DEBUG  ]        Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+[DEBUG  ]         Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+[DEBUG  ]         Szilard Pall               Sander Pronk              Roland Schulz       
+[DEBUG  ]        Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+[DEBUG  ]        Peter Tieleman              Jon Vincent              Teemu Virolainen     
+[DEBUG  ]      Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+[DEBUG  ]                            and the project leaders:
+[DEBUG  ]         Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+[DEBUG  ] 
+[DEBUG  ] Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+[DEBUG  ] Copyright (c) 2001-2019, The GROMACS development team at
+[DEBUG  ] Uppsala University, Stockholm University and
+[DEBUG  ] the Royal Institute of Technology, Sweden.
+[DEBUG  ] check out http://www.gromacs.org for more information.
+[DEBUG  ] 
+[DEBUG  ] GROMACS is free software; you can redistribute it and/or modify it
+[DEBUG  ] under the terms of the GNU Lesser General Public License
+[DEBUG  ] as published by the Free Software Foundation; either version 2.1
+[DEBUG  ] of the License, or (at your option) any later version.
+[DEBUG  ] 
+[DEBUG  ] GROMACS:      gmx make_ndx, version 2021.3-EasyBuild-4.5.2
+[DEBUG  ] Executable:   /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a/bin/gmx
+[DEBUG  ] Data prefix:  /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a
+[DEBUG  ] Working dir:  /home/a.alix/Redynamicarti2/5/gromacs/gx
+[DEBUG  ] Command line:
+[DEBUG  ]   gmx make_ndx -n index_mod_gromacs.ndx -o _GMXMMPBSA_COM_index.ndx -f com.pdb
+[DEBUG  ] 
+[DEBUG  ] 
+[DEBUG  ] Reading structure file
+[DEBUG  ] 
+[DEBUG  ] GROMACS reminds you: "I Had So Many Problem, and Then I Got Me a Walkman" (F. Black)
+[DEBUG  ] 
+[DEBUG  ] Going to read 1 old index file(s)
+[DEBUG  ] 
+[DEBUG  ]   0 System              : 57264 atoms
+[DEBUG  ]   1 Protein             :  4349 atoms
+[DEBUG  ]   2 Protein-H           :  2176 atoms
+[DEBUG  ]   3 C-alpha             :   271 atoms
+[DEBUG  ]   4 Backbone            :   813 atoms
+[DEBUG  ]   5 MainChain           :  1083 atoms
+[DEBUG  ]   6 MainChain+Cb        :  1339 atoms
+[DEBUG  ]   7 MainChain+H         :  1338 atoms
+[DEBUG  ]   8 SideChain           :  3011 atoms
+[DEBUG  ]   9 SideChain-H         :  1093 atoms
+[DEBUG  ]  10 Prot-Masses         :  4349 atoms
+[DEBUG  ]  11 non-Protein         : 52915 atoms
+[DEBUG  ]  12 Other               : 52915 atoms
+[DEBUG  ]  13 PTR                 :    50 atoms
+[DEBUG  ]  14 LIG                 :    56 atoms
+[DEBUG  ]  15 SOD                 :    52 atoms
+[DEBUG  ]  16 CLA                 :    50 atoms
+[DEBUG  ]  17 TIP3                : 52707 atoms
+[DEBUG  ]  18 Protein_LIG         :  4405 atoms
+[DEBUG  ] 
+[DEBUG  ]  nr : group      '!': not  'name' nr name   'splitch' nr    Enter: list groups
+[DEBUG  ]  'a': atom       '&': and  'del' nr         'splitres' nr   'l': list residues
+[DEBUG  ]  't': atom type  '|': or   'keep' nr        'splitat' nr    'h': help
+[DEBUG  ]  'r': residue              'res' nr         'chain' char
+[DEBUG  ]  "name": group             'case': case sensitive           'q': save and quit
+[DEBUG  ]  'ri': residue index
+[DEBUG  ] 
+[DEBUG  ] > 
+[DEBUG  ] 
+[DEBUG  ] > 
+[DEBUG  ] 
+[DEBUG  ] > 
+[DEBUG  ] Copied index group 1 'GMXMMPBSA_REC'
+[DEBUG  ] Copied index group 14 'GMXMMPBSA_LIG'
+[DEBUG  ] Merged two groups with OR: 4349 56 -> 4405
+[DEBUG  ] 
+[DEBUG  ]  19 GMXMMPBSA_REC_GMXMMPBSA_LIG:  4405 atoms
+[DEBUG  ] 
+[DEBUG  ] > 
+[INFO   ] Normal Complex: Saving group Protein_LIG (1_14) in _GMXMMPBSA_COM_index.ndx file as _GMXMMPBSA_COM.pdb
+[DEBUG  ] Running command: echo -e "GMXMMPBSA_REC_GMXMMPBSA_LIG"| /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a/bin/gmx editconf -f com.pdb -n _GMXMMPBSA_COM_index.ndx -o _GMXMMPBSA_COM.pdb
+[DEBUG  ]              :-) GROMACS - gmx editconf, 2021.3-EasyBuild-4.5.2 (-:
+[DEBUG  ] 
+[DEBUG  ]                             GROMACS is written by:
+[DEBUG  ]      Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+[DEBUG  ]          Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+[DEBUG  ]        Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+[DEBUG  ]      Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+[DEBUG  ]     Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+[DEBUG  ]        Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+[DEBUG  ]       Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+[DEBUG  ]     Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+[DEBUG  ]       Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+[DEBUG  ]        Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+[DEBUG  ]         Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+[DEBUG  ]         Szilard Pall               Sander Pronk              Roland Schulz       
+[DEBUG  ]        Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+[DEBUG  ]        Peter Tieleman              Jon Vincent              Teemu Virolainen     
+[DEBUG  ]      Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+[DEBUG  ]                            and the project leaders:
+[DEBUG  ]         Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+[DEBUG  ] 
+[DEBUG  ] Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+[DEBUG  ] Copyright (c) 2001-2019, The GROMACS development team at
+[DEBUG  ] Uppsala University, Stockholm University and
+[DEBUG  ] the Royal Institute of Technology, Sweden.
+[DEBUG  ] check out http://www.gromacs.org for more information.
+[DEBUG  ] 
+[DEBUG  ] GROMACS is free software; you can redistribute it and/or modify it
+[DEBUG  ] under the terms of the GNU Lesser General Public License
+[DEBUG  ] as published by the Free Software Foundation; either version 2.1
+[DEBUG  ] of the License, or (at your option) any later version.
+[DEBUG  ] 
+[DEBUG  ] GROMACS:      gmx editconf, version 2021.3-EasyBuild-4.5.2
+[DEBUG  ] Executable:   /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a/bin/gmx
+[DEBUG  ] Data prefix:  /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a
+[DEBUG  ] Working dir:  /home/a.alix/Redynamicarti2/5/gromacs/gx
+[DEBUG  ] Command line:
+[DEBUG  ]   gmx editconf -f com.pdb -n _GMXMMPBSA_COM_index.ndx -o _GMXMMPBSA_COM.pdb
+[DEBUG  ] 
+[DEBUG  ] 
+[DEBUG  ] Select a group for output:
+[DEBUG  ] Group     0 (         System) has 57264 elements
+[DEBUG  ] Group     1 (  GMXMMPBSA_REC) has  4349 elements
+[DEBUG  ] Group     2 (      Protein-H) has  2176 elements
+[DEBUG  ] Group     3 (        C-alpha) has   271 elements
+[DEBUG  ] Group     4 (       Backbone) has   813 elements
+[DEBUG  ] Group     5 (      MainChain) has  1083 elements
+[DEBUG  ] Group     6 (   MainChain+Cb) has  1339 elements
+[DEBUG  ] Group     7 (    MainChain+H) has  1338 elements
+[DEBUG  ] Group     8 (      SideChain) has  3011 elements
+[DEBUG  ] Group     9 (    SideChain-H) has  1093 elements
+[DEBUG  ] Group    10 (    Prot-Masses) has  4349 elements
+[DEBUG  ] Group    11 (    non-Protein) has 52915 elements
+[DEBUG  ] Group    12 (          Other) has 52915 elements
+[DEBUG  ] Group    13 (            PTR) has    50 elements
+[DEBUG  ] Group    14 (  GMXMMPBSA_LIG) has    56 elements
+[DEBUG  ] Group    15 (            SOD) has    52 elements
+[DEBUG  ] Group    16 (            CLA) has    50 elements
+[DEBUG  ] Group    17 (           TIP3) has 52707 elements
+[DEBUG  ] Group    18 (    Protein_LIG) has  4405 elements
+[DEBUG  ] Group    19 (GMXMMPBSA_REC_GMXMMPBSA_LIG) has  4405 elements
+[DEBUG  ] Select a group: 
+[ERROR  ] MMPBSA_Error /cm/shared/apps/eb/software/GROMACS/2021.3-foss-2021a/bin/gmx editconf failed when querying com_traj.xtc.
+           Check the gmx_MMPBSA.log file to report the problem.
